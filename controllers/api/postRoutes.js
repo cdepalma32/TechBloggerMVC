@@ -61,6 +61,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         id: req.params.id,
         user_id: req.session.user_id,
       },
+      include: Comment,
     });
 
     if (!postData) {
