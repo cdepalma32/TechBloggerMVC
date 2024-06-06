@@ -55,5 +55,11 @@ class User extends Model {
     }
   );
   
+  // Hook to delete associated posts and comments when a user is deleted
+User.beforeDestroy(async (user, options) => {
+  await Post.destroy({ where: { user_id: user.id } });
+  await Comment.destroy({ where: { user_id: user.id } });
+});
+
   module.exports = User;
   

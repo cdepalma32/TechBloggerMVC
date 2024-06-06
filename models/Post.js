@@ -40,4 +40,9 @@ Post.init(
   }
 );
 
+// Hook to delete associated comments when a post is deleted
+Post.beforeDestroy(async (post, options) => {
+  await Comment.destroy({ where: { post_id: post.id } });
+});
+
 module.exports = Post;
