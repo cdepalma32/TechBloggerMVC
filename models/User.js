@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-const Post = require('./Post'); // Import the Post model
-const Comment = require('./Comment'); // Import the Comment model
+// const Post = require('./Post'); // Import the Post model
+// const Comment = require('./Comment'); // Import the Comment model
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -40,6 +40,16 @@ try {
       },
     },
     {
+      hooks: {
+        beforeCreate: async (newUserData) => {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+          return newUserData;
+        },
+        beforeUpdate: async (updatedUserData) => {
+          updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+          return updatedUserData;
+        },
+      },
       sequelize,
       timestamps: false,
       freezeTableName: true,
@@ -48,11 +58,6 @@ try {
     }
   );
 
-  // Hook to delete associated posts and comments when a user is deleted
-  User.beforeDestroy(async (user, options) => {
-    await Post.destroy({ where: { user_id: user.id } });
-    await Comment.destroy({ where: { user_id: user.id } });
-  });
 } catch (error) {
   console.error('Error initializing User model:', error.message);
 }

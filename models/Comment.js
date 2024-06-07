@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User');
-const Post = require('./Post'); // Import the Post model
+// const User = require('./User');
+// const Post = require('./Post'); // Import the Post model
 
 class Comment extends Model {}
 

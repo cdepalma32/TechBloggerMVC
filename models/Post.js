@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Comment = require('./Comment'); // Import the Comment model
+// const Comment = require('./Comment'); // Import the Comment model
 
 class Post extends Model {}
 
@@ -42,10 +42,6 @@ try {
     }
   );
 
-  // Hook to delete associated comments when a post is deleted
-  Post.beforeDestroy(async (post, options) => {
-    await Comment.destroy({ where: { post_id: post.id } });
-  });
 } catch (error) {
   console.error('Error initializing Post model:', error.message);
 }
