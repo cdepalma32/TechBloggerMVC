@@ -1,27 +1,25 @@
 # TechBloggerMVC
-CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts.
-
-# socialNetAPI
 NoSQL Database Web App API
 
-  ## Screenshot
-  ![Screenshot](/img/SCM18.PNG)
 
-  ## Links to video
-  [![Video 1: Users routes](https://youtu.be/bMU8VDjXB1A)](https://youtu.be/bMU8VDjXB1A)
-  [![Video 2: Thoughts routes](https://youtu.be/AVgp14LZEfQ)](https://youtu.be/AVgp14LZEfQ)
-  [![Video 3: Friends routes](https://youtu.be/ZRjxpVlXFog)](https://youtu.be/ZRjxpVlXFog)
-  [![Video 4: Reactions routes](https://youtu.be/m96sziSvr5s)](https://youtu.be/m96sziSvr5s)
+## Description
+A CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. Follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
+## Installation
+No files to download for this project.
 
-  ## Description
-
-
-  ## Installation
-    The packages required to download for this project:
-    Bcrypt, Connect-session-sequelize, Dotenv, Express, Express-handlebars, Express-session, MySQL, Sequelize
+Packages required:
+- express
+- express-session
+- express-handlebars
+- mysql2
+- sequelize
+- dotenv
+- connect-session-sequelize
   
-  ## Table of Contents
+  
+## Table of Contents
+  - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Licence](#license)
@@ -29,21 +27,19 @@ NoSQL Database Web App API
   - [Tests](#tests)
   - [Questions](#questions)
   
-  ## Installation
-    No files to download for this project.
-  
-  ## Usage
-    To start the process, go to the deployed site **link here**
-  
-  ## License
-    This project is licenced under the MIT license.
-  [license](https://opensource.org/licenses/MIT)
+    
+## Usage
+Click [here](https://enigmatic-anchorage-26834-7cb4e53999dd.herokuapp.com/) to access the deployed site.
 
-  ## Contributing
+  
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Contributors
   Contact Me
 
-  ## Tests
+## Tests
   No test
 
-  ## Questions
+## Questions
   If you have any questions I may or comments, be contacted at [GitHub](cdepalma32), or by [email](crystaldepalma@yahoo.com).
